@@ -23,6 +23,10 @@ namespace cjh {
     vertex() = default;
     vertex(double x, double y);
 
+    // accessor operartor
+    double& operator[](int idx);
+    const double& operator[](int idx) const;
+
     // get data methods
     struct data_type& getData();
     const struct data_type& getData() const;
