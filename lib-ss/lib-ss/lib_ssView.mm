@@ -4,14 +4,13 @@
 //
 //  Created by 李韻晟 on 2021/1/29.
 //
-
-#import "lib_ssView.h"
-#import "CoreGraphics/CoreGraphics.h"
-#import "Quartz/Quartz.h"
+#import <CoreGraphics/CoreGraphics.h>
+#import <Quartz/Quartz.h>
 #import "simulator/simulator.hpp"
+#import "lib_ssView.h"
 
 @implementation lib_ssView {
-    cjh::Graph graph;
+    sjh::Graph graph;
     cjh::Simulator sim;
 }
 
@@ -26,7 +25,7 @@
         sim.setCenter(frame.size.width * 0.5, frame.size.height * 0.5);
 
         // generate random grpah
-        cjh::createRandomCompleteGraph(frame.size.width, frame.size.height, 15, 60, graph);
+        sjh::createRandomCompleteGraph(frame.size.width, frame.size.height, 15, 60, graph);
     }
     return self;
 }
@@ -80,7 +79,7 @@
 }
 
 - (void) drawScene {
-    CGContextRef ctx = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
+    CGContextRef ctx = (CGContextRef)[[NSGraphicsContext currentContext] CGContext];
     
     CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
     CGContextFillRect(ctx, self.frame);
@@ -93,16 +92,6 @@
 - (void)animateOneFrame
 {
     return;
-}
-
-- (BOOL)hasConfigureSheet
-{
-    return NO;
-}
-
-- (NSWindow*)configureSheet
-{
-    return nil;
 }
 
 @end

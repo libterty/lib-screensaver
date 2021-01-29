@@ -3,7 +3,7 @@
 #include <random>
 #include "graph.hpp"
 
-namespace cjh {
+namespace sjh {
   Vertex::Vertex(double x, double y) {
     coords[0] = x;
     coords[1] = y;

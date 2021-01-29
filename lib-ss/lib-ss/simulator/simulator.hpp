@@ -1,7 +1,6 @@
 #ifndef simulator_hpp
 #define simulator_hpp
 
-#include <iostream>
 #include "../graph/graph.hpp"
 
 using namespace std;
@@ -24,7 +23,7 @@ namespace cjh {
     void getCenter(double c[2]) const;
 
     // update graph dynamic
-    void updateGraphDynamics(Graph& G);
+    void updateGraphDynamics(sjh::Graph& G);
 
   private:
     /* data */

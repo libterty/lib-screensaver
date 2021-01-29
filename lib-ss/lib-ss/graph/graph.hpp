@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace cjh {
+namespace sjh {
 
   // class that represent vertex of graph
   class Vertex {

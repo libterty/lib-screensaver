@@ -31,7 +31,7 @@ namespace cjh {
   };
 
   // update graph dynamic
-  void Simulator::updateGraphDynamics(Graph &G) {
+  void Simulator::updateGraphDynamics(sjh::Graph &G) {
 
     // get vertices from the graph
     auto& vertices = G.getVertices();

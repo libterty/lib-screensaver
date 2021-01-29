@@ -10,12 +10,11 @@
 		98625B6525C42059002ACB23 /* lib_ssView.h in Headers */ = {isa = PBXBuildFile; fileRef = 98625B6425C42059002ACB23 /* lib_ssView.h */; };
 		98625B6725C42059002ACB23 /* lib_ssView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98625B6625C42059002ACB23 /* lib_ssView.mm */; };
 		98625B7225C421CD002ACB23 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98625B7125C421CD002ACB23 /* ScreenSaver.framework */; };
-		98625B7425C421D3002ACB23 /* ScreenTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98625B7325C421D3002ACB23 /* ScreenTime.framework */; };
 		98625B7825C42214002ACB23 /* graph in Resources */ = {isa = PBXBuildFile; fileRef = 98625B7625C42214002ACB23 /* graph */; };
 		98625B7925C42214002ACB23 /* simulator in Resources */ = {isa = PBXBuildFile; fileRef = 98625B7725C42214002ACB23 /* simulator */; };
 		98625B7C25C422D3002ACB23 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98625B7B25C422D3002ACB23 /* CoreGraphics.framework */; };
-		98625B7F25C423EA002ACB23 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98625B7E25C423EA002ACB23 /* Quartz.framework */; };
 		98625B8125C423EE002ACB23 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98625B8025C423EE002ACB23 /* QuartzCore.framework */; };
+		98625B9725C461C6002ACB23 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98625B9625C461C6002ACB23 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +23,11 @@
 		98625B6625C42059002ACB23 /* lib_ssView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = lib_ssView.mm; sourceTree = "<group>"; };
 		98625B6825C42059002ACB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98625B7125C421CD002ACB23 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
-		98625B7325C421D3002ACB23 /* ScreenTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenTime.framework; path = System/Library/Frameworks/ScreenTime.framework; sourceTree = SDKROOT; };
 		98625B7625C42214002ACB23 /* graph */ = {isa = PBXFileReference; lastKnownFileType = folder; path = graph; sourceTree = "<group>"; };
 		98625B7725C42214002ACB23 /* simulator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = simulator; sourceTree = "<group>"; };
 		98625B7B25C422D3002ACB23 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		98625B7E25C423EA002ACB23 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		98625B8025C423EE002ACB23 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		98625B9625C461C6002ACB23 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,10 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98625B9725C461C6002ACB23 /* Cocoa.framework in Frameworks */,
 				98625B7C25C422D3002ACB23 /* CoreGraphics.framework in Frameworks */,
 				98625B8125C423EE002ACB23 /* QuartzCore.framework in Frameworks */,
-				98625B7F25C423EA002ACB23 /* Quartz.framework in Frameworks */,
-				98625B7425C421D3002ACB23 /* ScreenTime.framework in Frameworks */,
 				98625B7225C421CD002ACB23 /* ScreenSaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,10 +77,9 @@
 		98625B7025C421CD002ACB23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98625B9625C461C6002ACB23 /* Cocoa.framework */,
 				98625B8025C423EE002ACB23 /* QuartzCore.framework */,
-				98625B7E25C423EA002ACB23 /* Quartz.framework */,
 				98625B7B25C422D3002ACB23 /* CoreGraphics.framework */,
-				98625B7325C421D3002ACB23 /* ScreenTime.framework */,
 				98625B7125C421CD002ACB23 /* ScreenSaver.framework */,
 			);
 			name = Frameworks;
@@ -290,11 +286,16 @@
 		98625B6C25C42059002ACB23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_TESTABILITY = NO;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "lib-ss/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "lib.lib-ss";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
@@ -304,10 +305,14 @@
 		98625B6D25C42059002ACB23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "lib-ss/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "lib.lib-ss";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
