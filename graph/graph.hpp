@@ -75,6 +75,10 @@ namespace cjh {
     vector<list_type> connectivity;
   
   };
+
+  void createRandomCompleteGraph(double width, double height, 
+                                 uint32_t min_num_vertices, uint32_t max_num_vertices, 
+                                 Graph& G);
 } // namespace cjh
 
 #endif /* graph_hpp */
