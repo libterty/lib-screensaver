@@ -41,6 +41,50 @@
   [super drawRect:rect];
 }
 
-(void) drawGraph:(CGCContextRef) ctx {
+(void) drawGraph:(CGContextRef) ctx {
   auto& vertices = self -> graph.getVertices();
+  CGContextSetRGBFillColor(ctx, 0, 0, 0, 1);
+  CGContextSetRGBStrokeColor(ctx, 0, 0, 0, 1);
+  CGContextSetLineWidth(ctx, 1.0);
+
+  for(size_t i = 0; i < vertices.size(); ++i) {
+    CGContextBeginPath(ctx);
+    auto& v = vertices[i];
+    CGContextAddArc(ctx, v[0], v[1], 10, 0, 2 * M_PI, 1);
+    CGContextFillPath(ctx);
+    CGContextClosePath(ctx);
+  }
+
+  for(size_t i = 0; i < vertices.size(); ++i) {
+    uint_32 from_vertex = static_cast<uint32_t>(i);
+    auto iter = self -> graph.getConnectivityStartIterator(from_vertex);
+    auto end = self -> grpah.getConnectivityEndIterator(from_vertex);
+    for(; iter != end; ++iter) {
+      uint_32 to_vertex = *iter;
+
+      auto& v1 = vertices[from_vertex];
+      auto& v2 = vertices[to_vertex];
+
+      CGContextBeginPath(ctx);
+      CGContextMoveToPoint(ctx, v1[0], v1[1]);
+      CGContextAddLineToPoint(ctx, v2[0], v2[1]);
+      CGContextStrokePath(ctx);
+      CGContextClosePath(ctx);
+    }
+  }
+}
+
+(void) drawScene {
+    CGContextRef ctx = (CGContextRef)[[NSGraphicsContext currentContext], graphicsPort];
+    
+    CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
+    CGContextFillRect(ctx, self.frame);
+    
+    [self drawGraph:ctx];
+    
+    sim.updateGraphDynamics(self -> graph);
+}
+
+(void) animateOneFrame {
+    return;
 }
