@@ -11,7 +11,7 @@ using namespace std;
 namespace cjh {
 
   // class that represent vertex of graph
-  class vertex {
+  class Vertex {
   public:
     // structure
     struct data_type {
@@ -20,8 +20,8 @@ namespace cjh {
       double bios;
     };
     // ctor
-    vertex() = default;
-    vertex(double x, double y);
+    Vertex() = default;
+    Vertex(double x, double y);
 
     // accessor operartor
     double& operator[](int idx);
@@ -37,15 +37,15 @@ namespace cjh {
   };
 
   // class represent graph
-  class graph {
+  class Graph {
   public:
 
-    using vertex_type = vertex;
+    using vertex_type = Vertex;
     using list_type = list<uint32_t>;
 
     // ctor/dtor
-    graph() = default;
-    ~graph() = default;
+    Graph() = default;
+    ~Graph() = default;
 
     // modify graph state
     void addVertex(const vertex_type& v);
