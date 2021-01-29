@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		98625B3D25C4169B002ACB23 /* screen_saverView.h in Headers */ = {isa = PBXBuildFile; fileRef = 98625B3C25C4169B002ACB23 /* screen_saverView.h */; };
 		98625B3F25C4169B002ACB23 /* screen_saverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98625B3E25C4169B002ACB23 /* screen_saverView.m */; };
+		98625B4825C41878002ACB23 /* graph in Resources */ = {isa = PBXBuildFile; fileRef = 98625B4725C41878002ACB23 /* graph */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +17,9 @@
 		98625B3C25C4169B002ACB23 /* screen_saverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = screen_saverView.h; sourceTree = "<group>"; };
 		98625B3E25C4169B002ACB23 /* screen_saverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = screen_saverView.m; sourceTree = "<group>"; };
 		98625B4025C4169B002ACB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98625B4725C41878002ACB23 /* graph */ = {isa = PBXFileReference; lastKnownFileType = folder; path = graph; sourceTree = "<group>"; };
+		98625B4B25C41897002ACB23 /* simulator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simulator.cpp; sourceTree = "<group>"; };
+		98625B4C25C41897002ACB23 /* simulator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = simulator.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,11 +52,22 @@
 		98625B3B25C4169B002ACB23 /* screen-saver */ = {
 			isa = PBXGroup;
 			children = (
+				98625B4A25C41897002ACB23 /* simulator */,
+				98625B4725C41878002ACB23 /* graph */,
 				98625B3C25C4169B002ACB23 /* screen_saverView.h */,
 				98625B3E25C4169B002ACB23 /* screen_saverView.m */,
 				98625B4025C4169B002ACB23 /* Info.plist */,
 			);
 			path = "screen-saver";
+			sourceTree = "<group>";
+		};
+		98625B4A25C41897002ACB23 /* simulator */ = {
+			isa = PBXGroup;
+			children = (
+				98625B4B25C41897002ACB23 /* simulator.cpp */,
+				98625B4C25C41897002ACB23 /* simulator.hpp */,
+			);
+			path = simulator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98625B4825C41878002ACB23 /* graph in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
